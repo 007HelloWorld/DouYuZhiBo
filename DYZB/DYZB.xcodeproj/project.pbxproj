@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A64242E1F33FD460004E74E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A64242D1F33FD460004E74E /* HomeViewController.swift */; };
+		9A6424351F3402920004E74E /* Image_launch_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6424311F3402920004E74E /* Image_launch_logo@2x.png */; };
+		9A6424361F3402920004E74E /* searchBtnIconHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6424321F3402920004E74E /* searchBtnIconHL@2x.png */; };
+		9A6424371F3402920004E74E /* searchIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6424331F3402920004E74E /* searchIcon@2x.png */; };
+		9A6424381F3402920004E74E /* searchIconDark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6424341F3402920004E74E /* searchIconDark@2x.png */; };
+		9A64243A1F3406680004E74E /* image_my_history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6424391F3406680004E74E /* image_my_history@2x.png */; };
+		9A64243D1F3408D80004E74E /* qr_er_btn_Selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A64243B1F3408D80004E74E /* qr_er_btn_Selected@2x.png */; };
+		9A64243E1F3408D80004E74E /* qr_er_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A64243C1F3408D80004E74E /* qr_er_btn@2x.png */; };
+		9A6424411F340B620004E74E /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6424401F340B620004E74E /* UIBarButtonItem-Extension.swift */; };
 		9A996F8B1F31D6D3001A47E5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A996F8A1F31D6D3001A47E5 /* Home.storyboard */; };
 		9A996F8E1F31D6FD001A47E5 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A996F8C1F31D6FD001A47E5 /* Live.storyboard */; };
 		9A996F901F31D719001A47E5 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A996F8F1F31D719001A47E5 /* Follow.storyboard */; };
@@ -38,6 +47,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A64242D1F33FD460004E74E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9A6424311F3402920004E74E /* Image_launch_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Image_launch_logo@2x.png"; sourceTree = "<group>"; };
+		9A6424321F3402920004E74E /* searchBtnIconHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchBtnIconHL@2x.png"; sourceTree = "<group>"; };
+		9A6424331F3402920004E74E /* searchIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchIcon@2x.png"; sourceTree = "<group>"; };
+		9A6424341F3402920004E74E /* searchIconDark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchIconDark@2x.png"; sourceTree = "<group>"; };
+		9A6424391F3406680004E74E /* image_my_history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_my_history@2x.png"; sourceTree = "<group>"; };
+		9A64243B1F3408D80004E74E /* qr_er_btn_Selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qr_er_btn_Selected@2x.png"; sourceTree = "<group>"; };
+		9A64243C1F3408D80004E74E /* qr_er_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qr_er_btn@2x.png"; sourceTree = "<group>"; };
+		9A6424401F340B620004E74E /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		9A996F8A1F31D6D3001A47E5 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9A996F8D1F31D6FD001A47E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Live.storyboard; sourceTree = "<group>"; };
 		9A996F8F1F31D719001A47E5 /* Follow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Follow.storyboard; sourceTree = "<group>"; };
@@ -92,6 +110,7 @@
 		9A64241F1F33FBE60004E74E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9A64242D1F33FD460004E74E /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +207,36 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		9A64242F1F3402860004E74E /* 图片资源 */ = {
+			isa = PBXGroup;
+			children = (
+				9A6424301F3402920004E74E /* 首页导航栏图标 */,
+			);
+			path = "图片资源";
+			sourceTree = "<group>";
+		};
+		9A6424301F3402920004E74E /* 首页导航栏图标 */ = {
+			isa = PBXGroup;
+			children = (
+				9A6424311F3402920004E74E /* Image_launch_logo@2x.png */,
+				9A6424321F3402920004E74E /* searchBtnIconHL@2x.png */,
+				9A6424331F3402920004E74E /* searchIcon@2x.png */,
+				9A6424341F3402920004E74E /* searchIconDark@2x.png */,
+				9A6424391F3406680004E74E /* image_my_history@2x.png */,
+				9A64243B1F3408D80004E74E /* qr_er_btn_Selected@2x.png */,
+				9A64243C1F3408D80004E74E /* qr_er_btn@2x.png */,
+			);
+			path = "首页导航栏图标";
+			sourceTree = "<group>";
+		};
+		9A64243F1F340B050004E74E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9A6424401F340B620004E74E /* UIBarButtonItem-Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		9A6907D01F31CA35008EBAE3 /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,9 +257,9 @@
 		9A6907D21F31CA35008EBAE3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				9A64241F1F33FBE60004E74E /* Controller */,
 				9A64241E1F33FBC70004E74E /* Model */,
 				9A6424201F33FBEF0004E74E /* View */,
+				9A64241F1F33FBE60004E74E /* Controller */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -248,6 +297,7 @@
 		9A6907D61F31CA35008EBAE3 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9A64243F1F340B050004E74E /* Extension */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -277,11 +327,12 @@
 			children = (
 				9AA75D991F29E80E00431480 /* AppDelegate.swift */,
 				9A6907D11F31CA35008EBAE3 /* Main */,
-				9A6907D31F31CA35008EBAE3 /* Live */,
 				9A6907D21F31CA35008EBAE3 /* Home */,
+				9A6907D31F31CA35008EBAE3 /* Live */,
 				9A6907D41F31CA35008EBAE3 /* Follow */,
 				9A6907D51F31CA35008EBAE3 /* Profile */,
 				9A6907D01F31CA35008EBAE3 /* Class */,
+				9A64242F1F3402860004E74E /* 图片资源 */,
 				9A6907D61F31CA35008EBAE3 /* Tools */,
 				9AA75D9D1F29E80E00431480 /* Main.storyboard */,
 				9A996F8A1F31D6D3001A47E5 /* Home.storyboard */,
@@ -422,11 +473,18 @@
 			files = (
 				9AA75DA41F29E80E00431480 /* LaunchScreen.storyboard in Resources */,
 				9AA75DA11F29E80E00431480 /* Assets.xcassets in Resources */,
+				9A6424351F3402920004E74E /* Image_launch_logo@2x.png in Resources */,
+				9A6424381F3402920004E74E /* searchIconDark@2x.png in Resources */,
 				9AA75D9F1F29E80E00431480 /* Main.storyboard in Resources */,
 				9A996F8E1F31D6FD001A47E5 /* Live.storyboard in Resources */,
 				9A996F8B1F31D6D3001A47E5 /* Home.storyboard in Resources */,
+				9A64243E1F3408D80004E74E /* qr_er_btn@2x.png in Resources */,
 				9A996F931F31D734001A47E5 /* Profile.storyboard in Resources */,
+				9A6424371F3402920004E74E /* searchIcon@2x.png in Resources */,
+				9A64243A1F3406680004E74E /* image_my_history@2x.png in Resources */,
 				9A996F901F31D719001A47E5 /* Follow.storyboard in Resources */,
+				9A64243D1F3408D80004E74E /* qr_er_btn_Selected@2x.png in Resources */,
+				9A6424361F3402920004E74E /* searchBtnIconHL@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +511,8 @@
 			files = (
 				9AA75D9A1F29E80E00431480 /* AppDelegate.swift in Sources */,
 				9A996F951F31D916001A47E5 /* MianViewController.swift in Sources */,
+				9A6424411F340B620004E74E /* UIBarButtonItem-Extension.swift in Sources */,
+				9A64242E1F33FD460004E74E /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
