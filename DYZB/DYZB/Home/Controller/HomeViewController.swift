@@ -26,6 +26,36 @@ class HomeViewController: UIViewController {
     
     
     
+    public lazy var pageContentView : PageContentView = {
+        
+        //1.确定内容的frame
+        let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH
+        let contentFrame = CGRect.init(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: contentH)
+        
+        //2.确定所有的子控制器
+        var childVcs = [UIViewController]()
+        for _ in 0..<4{
+            
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor.init(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
+            childVcs.append(vc)
+            
+        }
+        
+        let contentView = PageContentView.init(frame: contentFrame, childVcs: childVcs, parentViewController: self)
+        
+        return contentView
+        
+    }()
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +88,8 @@ extension HomeViewController{
         
         
         //3.设置底线和滚动的滑块
-        
+        view.addSubview(pageContentView)
+        pageContentView.backgroundColor = UIColor.purple
         
     }
     
