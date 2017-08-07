@@ -34,8 +34,9 @@ class RecommendViewController: UIViewController {
         
         
         let collectionView = UICollectionView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenW, height: kScreenH), collectionViewLayout: layout)
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
-        collectionView.backgroundColor = UIColor.blue
+        collectionView.register(UINib.init(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
+        collectionView.register(UINib.init(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
+        collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self
         collectionView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
         
@@ -64,9 +65,6 @@ class RecommendViewController: UIViewController {
 extension RecommendViewController{
     
     public func setUI(){
-        
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kNormalCellID)
-        
         
         view.addSubview(collectionView)
         
@@ -97,7 +95,6 @@ extension RecommendViewController : UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
         
-        cell.backgroundColor = UIColor.red
         
         return cell
     }
@@ -106,7 +103,6 @@ extension RecommendViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath)
-        headerView.backgroundColor = UIColor.gray
         
         return headerView
         
