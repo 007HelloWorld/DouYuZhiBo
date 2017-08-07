@@ -12,29 +12,32 @@ private let kTitleViewH : CGFloat = 40
 
 
 class HomeViewController: UIViewController {
-
-    //MARK: - 懒加载属性
-    public lazy var pageTitleView : PageTitleView = {
     
+    //MARK: - 懒加载属性
+    public lazy var pageTitleView : PageTitleView = {[weak self] in
+        
         let titleFrame = CGRect.init(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleView = PageTitleView.init(frame: titleFrame, title: titles)
-//        titleView.backgroundColor = UIColor.purple
+        //        titleView.backgroundColor = UIColor.purple
+        titleView.delegate = self
+        
         
         return titleView
-    }()
+        }()
     
     
     
-    public lazy var pageContentView : PageContentView = {
+    public lazy var pageContentView : PageContentView = {[weak self] in
         
         //1.确定内容的frame
-        let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH
+        let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH - kTabBarH
         let contentFrame = CGRect.init(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: contentH)
         
         //2.确定所有的子控制器
         var childVcs = [UIViewController]()
-        for _ in 0..<4{
+        childVcs.append(RecommendViewController())
+        for _ in 0..<3{
             
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor.init(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
@@ -42,33 +45,22 @@ class HomeViewController: UIViewController {
             
         }
         
-        let contentView = PageContentView.init(frame: contentFrame, childVcs: childVcs, parentViewController: self)
-        
+        let contentView = PageContentView.init(frame: contentFrame, childVcs: childVcs, parentViewController: self!)
+        contentView.delegate = self
         return contentView
         
-    }()
-    
-    
-    
-    
-    
-    
-    
-    
+        }()
     
     //MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
+        
         //设置UI界面
         setupUI()
     }
-
+    
 }
-
-
-
 
 //  MARK: - 设置UI界面
 extension HomeViewController{
@@ -99,23 +91,19 @@ extension HomeViewController{
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(imageName: "Image_launch_logo")
         
         
-    
-        
-        
-        
         //2.设置右侧的Item
         
         let size = CGSize.init(width: 40, height: 40)
         
         //下面方法是对类方法进行拓展
-//        //历史
-//        let historyItem = UIBarButtonItem.createItem(imageName: "image_my_history", heighImageName: "image_my_history", size: size)
-//        
-//        //搜索
-//        let searchItem = UIBarButtonItem.createItem(imageName: "searchIconDark", heighImageName: "searchIcon", size: size)
-//        
-//        //二维码
-//        let qrcodeItem = UIBarButtonItem.createItem(imageName: "qr_er_btn", heighImageName: "qr_er_btn_Selected", size: size)
+        //        //历史
+        //        let historyItem = UIBarButtonItem.createItem(imageName: "image_my_history", heighImageName: "image_my_history", size: size)
+        //
+        //        //搜索
+        //        let searchItem = UIBarButtonItem.createItem(imageName: "searchIconDark", heighImageName: "searchIcon", size: size)
+        //
+        //        //二维码
+        //        let qrcodeItem = UIBarButtonItem.createItem(imageName: "qr_er_btn", heighImageName: "qr_er_btn_Selected", size: size)
         
         
         
@@ -134,17 +122,55 @@ extension HomeViewController{
         
         navigationItem.rightBarButtonItems = [historyItem,searchItem,qrcodeItem]
         
+    }
+}
+
+
+
+//MARK: - 遵守pagetitleviewdelegate协议
+extension HomeViewController : PageTitleViewDelegate{
+    
+    func pageTitleView(titleView: PageTitleView, selectedIndex index: Int) {
         
+        print(index)
         
+        pageContentView.setCurrentIndex(currentIndex: index)
         
     }
-    
-    
+}
 
+
+
+//MARK: - 遵守PageContentViewDelegate协议
+extension HomeViewController : PageContentViewDelegate{
     
-    
-    
-    
-    
+    func pageContentView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        
+        pageTitleView.setTitleWithProgress(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
