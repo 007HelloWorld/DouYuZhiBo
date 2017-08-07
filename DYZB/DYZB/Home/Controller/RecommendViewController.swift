@@ -26,6 +26,11 @@ private let kPrettyCellID = "kPrettyCellID"
 
 class RecommendViewController: UIViewController {
     
+    
+    public lazy var recommendVM : RecommendViewModel = RecommendViewModel()
+    
+    
+    
     //MARK:- 系统回调函数
     public lazy var collectionView : UICollectionView = {
         
@@ -65,11 +70,34 @@ class RecommendViewController: UIViewController {
         //设置UI界面
         setUI()
         
+        //发送网络请求
+        loadData()
+        
         
         
         
     }
 }
+
+//MARK:-发送网络请求
+extension RecommendViewController {
+
+    public func loadData() {
+    
+//        NetworkTools.requestData(.get, URLString: "http://httpbin.org/get", parameters: ["name":"why"]) { (result) in
+//            
+//            print(result)
+//            
+//    }
+        recommendVM.requestData()
+    
+        
+    }
+}
+
+
+
+
 
 
 
