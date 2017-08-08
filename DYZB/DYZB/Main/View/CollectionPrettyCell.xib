@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymR-N1-2so">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymR-N1-2so">
                         <rect key="frame" x="0.0" y="196" width="46" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="Xs4-6R-onc"/>
@@ -46,39 +46,46 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="666在线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bL8-1x-bUC">
-                        <rect key="frame" x="255" y="5" width="60" height="20"/>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h93-5t-Gd9">
+                        <rect key="frame" x="252" y="8" width="60" height="20"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="fX3-Ul-iHl"/>
-                            <constraint firstAttribute="width" constant="60" id="hee-wV-DIC"/>
+                            <constraint firstAttribute="width" constant="60" id="iEY-uS-aFt"/>
+                            <constraint firstAttribute="height" constant="20" id="nEj-9W-zBL"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
+                        <state key="normal" title="66在线">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="3"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
-                    </label>
+                    </button>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="h93-5t-Gd9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="3Ra-wt-8Ec"/>
                 <constraint firstItem="ymR-N1-2so" firstAttribute="top" secondItem="tls-oj-tDS" secondAttribute="bottom" constant="5" id="7Eq-3F-16B"/>
                 <constraint firstItem="0Ti-cW-iyf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AFo-TB-owh"/>
                 <constraint firstAttribute="bottom" secondItem="ymR-N1-2so" secondAttribute="bottom" constant="10" id="GPp-u6-yOF"/>
                 <constraint firstItem="tls-oj-tDS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="OVi-kR-FI5"/>
-                <constraint firstItem="bL8-1x-bUC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="PGw-OU-6j8"/>
+                <constraint firstAttribute="trailing" secondItem="h93-5t-Gd9" secondAttribute="trailing" constant="8" id="aH2-Is-Y69"/>
                 <constraint firstAttribute="trailing" secondItem="0Ti-cW-iyf" secondAttribute="trailing" id="cCM-fx-Q4G"/>
                 <constraint firstItem="ymR-N1-2so" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hvk-Nt-txY"/>
                 <constraint firstAttribute="trailing" secondItem="tls-oj-tDS" secondAttribute="trailing" constant="5" id="mjE-hK-6iO"/>
                 <constraint firstItem="0Ti-cW-iyf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qvG-YR-scb"/>
-                <constraint firstAttribute="trailing" secondItem="bL8-1x-bUC" secondAttribute="trailing" constant="5" id="tXR-WT-k7n"/>
                 <constraint firstItem="tls-oj-tDS" firstAttribute="top" secondItem="0Ti-cW-iyf" secondAttribute="bottom" constant="5" id="wgE-xg-UX8"/>
             </constraints>
             <size key="customSize" width="320" height="220"/>
+            <connections>
+                <outlet property="cityBtn" destination="ymR-N1-2so" id="CHV-gA-N66"/>
+                <outlet property="iconImageView" destination="0Ti-cW-iyf" id="tdg-v2-J9Y"/>
+                <outlet property="nickNameLabel" destination="tls-oj-tDS" id="8LO-SF-ytS"/>
+                <outlet property="onlineBtn" destination="h93-5t-Gd9" id="1jx-QX-TxY"/>
+            </connections>
             <point key="canvasLocation" x="-72" y="68"/>
         </collectionViewCell>
     </objects>

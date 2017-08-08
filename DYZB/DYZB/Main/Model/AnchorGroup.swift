@@ -43,4 +43,15 @@ class AnchorGroup: NSObject {
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {}
     
+    
+    // MARK: - 构造函数
+    override init() {
+        
+    }
+    
+    
+    
+    
+    
+    
 }

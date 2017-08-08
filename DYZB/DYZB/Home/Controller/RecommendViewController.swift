@@ -84,14 +84,11 @@ extension RecommendViewController {
 
     public func loadData() {
     
-//        NetworkTools.requestData(.get, URLString: "http://httpbin.org/get", parameters: ["name":"why"]) { (result) in
-//            
-//            print(result)
-//            
-//    }
-        recommendVM.requestData()
-    
+        recommendVM.requestData{
         
+            self.collectionView.reloadData()
+            
+        }
     }
 }
 
@@ -118,35 +115,42 @@ extension RecommendViewController : UICollectionViewDataSource,UICollectionViewD
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         
-        return 12
+        return recommendVM.anchorGroups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if section == 0 {
-            
-            return 8
-        }
         
-        return 4
+        
+        let group = recommendVM.anchorGroups[section]
+        
+        return group.anchors.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        //0.取出模型对象
+        let group = recommendVM.anchorGroups[indexPath.section]
+        let anchor = group.anchors[indexPath.item]
+
         //1.定义cell
-        var cell : UICollectionViewCell!
+        var cell : CollectionBaseCell!
         
+        
+        //2.取出cell
         if indexPath.section == 1 {
             
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath)
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath) as! CollectionPrettyCell
             
         }else {
         
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
-
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! CollectionNormalCell
+            
         }
         
-        
+        //3.将模型赋值给cell
+        cell.anchor = anchor
         
         return cell
     }
@@ -154,7 +158,14 @@ extension RecommendViewController : UICollectionViewDataSource,UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath)
+        //1.取出section的HeaderView
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
+        
+        //2.取出模型
+        headerView.group = recommendVM.anchorGroups[indexPath.section]
+        
+        
+        
         
         return headerView
         

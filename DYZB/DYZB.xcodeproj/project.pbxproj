@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		02ECE955CA61492D3C453BBB /* Pods_DYZB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A642B4D2717A9E8A543976EA /* Pods_DYZB.framework */; };
 		71C5E10F29865383E7614720 /* Pods_DYZBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42D9D0D005AF19AEB487532 /* Pods_DYZBUITests.framework */; };
+		9A62413C1F39664C00B9DD60 /* CollectionBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A62413B1F39664C00B9DD60 /* CollectionBaseCell.swift */; };
 		9A64242E1F33FD460004E74E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A64242D1F33FD460004E74E /* HomeViewController.swift */; };
 		9A6424351F3402920004E74E /* Image_launch_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6424311F3402920004E74E /* Image_launch_logo@2x.png */; };
 		9A6424361F3402920004E74E /* searchBtnIconHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6424321F3402920004E74E /* searchBtnIconHL@2x.png */; };
@@ -70,6 +71,7 @@
 		232612E9A8171687C4430814 /* Pods-DYZBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYZBTests/Pods-DYZBTests.release.xcconfig"; sourceTree = "<group>"; };
 		4DAF56FDF0F17091DBBAB370 /* Pods-DYZBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZBTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYZBTests/Pods-DYZBTests.debug.xcconfig"; sourceTree = "<group>"; };
 		92F628100BF61CA69355CA78 /* Pods-DYZBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZBUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYZBUITests/Pods-DYZBUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9A62413B1F39664C00B9DD60 /* CollectionBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBaseCell.swift; sourceTree = "<group>"; };
 		9A64242D1F33FD460004E74E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9A6424311F3402920004E74E /* Image_launch_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Image_launch_logo@2x.png"; sourceTree = "<group>"; };
 		9A6424321F3402920004E74E /* searchBtnIconHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchBtnIconHL@2x.png"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				9A7E0FA71F37F766001756B2 /* CollectionNormalCell.xib */,
 				9A7E0FAA1F37FF50001756B2 /* CollectionPrettyCell.swift */,
 				9A7E0FAB1F37FF50001756B2 /* CollectionPrettyCell.xib */,
+				9A62413B1F39664C00B9DD60 /* CollectionBaseCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -767,6 +770,7 @@
 				9A6424601F345F120004E74E /* Common.swift in Sources */,
 				9A7E0FAC1F37FF50001756B2 /* CollectionPrettyCell.swift in Sources */,
 				9A7E0FF41F385271001756B2 /* NSDate-Extension.swift in Sources */,
+				9A62413C1F39664C00B9DD60 /* CollectionBaseCell.swift in Sources */,
 				9A7E0FA81F37F766001756B2 /* CollectionNormalCell.swift in Sources */,
 				9A7E0FEF1F384A1E001756B2 /* NetworkTools.swift in Sources */,
 				9A64242E1F33FD460004E74E /* HomeViewController.swift in Sources */,

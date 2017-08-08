@@ -29,6 +29,10 @@ class AnchorModel: NSObject {
     //观看人数
     var online : Int = 0
     
+    //所在城市
+    var anchor_city : String = ""
+    
+    
     //构造函数
     init(dict : [String : NSObject]) {
         
