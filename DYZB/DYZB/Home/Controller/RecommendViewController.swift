@@ -12,7 +12,8 @@ private let kItemMargin : CGFloat = 10
 private let kItemW = (kScreenW - 3 * kItemMargin) / 2
 private let kNormalItemH = kItemW * 3 / 4
 private let kPrettyItemH = kItemW * 4 / 3
-
+private let kCycleViewH = kScreenW * 3 / 8//轮播图的高度
+private let kGameViewH : CGFloat = 90 //轮播图下面的推荐游戏的按钮高度
 
 private let kHeaderViewH : CGFloat = 50
 
@@ -23,12 +24,20 @@ private let kPrettyCellID = "kPrettyCellID"
 
 
 
-
 class RecommendViewController: UIViewController {
     
     
     public lazy var recommendVM : RecommendViewModel = RecommendViewModel()
     
+    //懒加载一个头部视图
+    public lazy var cycleView : RecommendCycleView = {
+    
+        let cycleView = RecommendCycleView.recommendCycleView()
+        
+        cycleView.frame = CGRect.init(x: 0, y: -(kCycleViewH + kGameViewH), width: kScreenW, height: kCycleViewH)
+        
+        return cycleView
+    }()
     
     
     //MARK:- 系统回调函数
@@ -62,6 +71,23 @@ class RecommendViewController: UIViewController {
     
     
     
+    //懒加载滚动视图下面的推荐游戏按钮
+    public lazy var gameView : RecommendGameView = {
+    
+        let gameView = RecommendGameView.recommendGameView()
+        
+        gameView.frame = CGRect.init(x: 0, y: -kGameViewH, width: kScreenW, height: kGameViewH)
+        
+        return gameView
+    }()
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     override func viewDidLoad() {
@@ -83,12 +109,23 @@ class RecommendViewController: UIViewController {
 extension RecommendViewController {
 
     public func loadData() {
-    
+        
+        
+        //1.请求推荐数据
         recommendVM.requestData{
         
             self.collectionView.reloadData()
             
         }
+        
+        
+        //2.请求轮播数据
+        recommendVM.requestCycleData {
+            
+            self.cycleView.cycleModels = self.recommendVM.cycleModels
+            
+        }
+        
     }
 }
 
@@ -103,7 +140,22 @@ extension RecommendViewController{
     
     public func setUI(){
         
+        //1.将UICollectionView添加到控制器的view中
         view.addSubview(collectionView)
+        
+        //2.将CycleView添加到UICollectionView中
+        collectionView.addSubview(cycleView)
+        
+        
+        //3.将gameView添加collectionView中
+        collectionView.addSubview(gameView)
+        
+        
+        //4.设置collectionView的内边距,设置这部分用来把轮播图位置显示出来
+        collectionView.contentInset = UIEdgeInsetsMake(kCycleViewH + kGameViewH, 0, 0, 0)
+        
+        
+        
         
     }
 }
