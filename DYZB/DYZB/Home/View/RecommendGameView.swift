@@ -9,11 +9,33 @@
 import UIKit
 
 private let kGameCellID = "kGameCellID"
-
+private let kEdgeInsetMargin : CGFloat = 10
 
 
 class RecommendGameView: UIView {
 
+    
+    // MARK: - 定义数据的属性
+    var groups : [AnchorGroup]?{
+        didSet{
+            
+            //1.在轮播图下面有一行按钮，前面带有热门，还有一个不需要的参数，在这里进行删除操作
+            groups?.removeFirst()
+            groups?.removeFirst()
+            
+            
+            //2.添加更多组
+            let moreGroup = AnchorGroup()
+            moreGroup.tag_name = "更多"
+            groups?.append(moreGroup)
+            
+            
+            collectionView.reloadData()
+        }
+    }
+    
+    
+    
     
     // MARK: - 控件属性
     
@@ -29,9 +51,11 @@ class RecommendGameView: UIView {
         autoresizingMask = UIViewAutoresizing()
         
         //注册cell
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kGameCellID)
+        collectionView.register(UINib.init(nibName: "CollectionGameCell", bundle: nil), forCellWithReuseIdentifier: kGameCellID)
         
         
+        //给collectionView添加内边距
+        collectionView.contentInset = UIEdgeInsetsMake(0, kEdgeInsetMargin, 0, kEdgeInsetMargin)
         
     }
     
@@ -56,17 +80,17 @@ extension RecommendGameView : UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 12
+        return groups?.count ?? 0
         
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCellID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCellID, for: indexPath) as! CollectionGameCell
         
+        cell.group = groups![indexPath.item]
         
-        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.blue
         
         return cell
     }

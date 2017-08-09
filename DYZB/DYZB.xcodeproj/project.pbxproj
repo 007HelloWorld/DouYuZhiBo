@@ -17,6 +17,8 @@
 		9A6241461F39A94000B9DD60 /* CollectionCycleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A6241441F39A94000B9DD60 /* CollectionCycleCell.xib */; };
 		9A6241481F39BB2600B9DD60 /* RecommendGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6241471F39BB2600B9DD60 /* RecommendGameView.swift */; };
 		9A62414A1F39BB3900B9DD60 /* RecommendGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A6241491F39BB3900B9DD60 /* RecommendGameView.xib */; };
+		9A62414D1F39C4A300B9DD60 /* CollectionGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A62414B1F39C4A300B9DD60 /* CollectionGameCell.swift */; };
+		9A62414E1F39C4A300B9DD60 /* CollectionGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A62414C1F39C4A300B9DD60 /* CollectionGameCell.xib */; };
 		9A64242E1F33FD460004E74E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A64242D1F33FD460004E74E /* HomeViewController.swift */; };
 		9A6424351F3402920004E74E /* Image_launch_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6424311F3402920004E74E /* Image_launch_logo@2x.png */; };
 		9A6424361F3402920004E74E /* searchBtnIconHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6424321F3402920004E74E /* searchBtnIconHL@2x.png */; };
@@ -86,6 +88,8 @@
 		9A6241441F39A94000B9DD60 /* CollectionCycleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCycleCell.xib; sourceTree = "<group>"; };
 		9A6241471F39BB2600B9DD60 /* RecommendGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendGameView.swift; sourceTree = "<group>"; };
 		9A6241491F39BB3900B9DD60 /* RecommendGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendGameView.xib; sourceTree = "<group>"; };
+		9A62414B1F39C4A300B9DD60 /* CollectionGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionGameCell.swift; sourceTree = "<group>"; };
+		9A62414C1F39C4A300B9DD60 /* CollectionGameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionGameCell.xib; sourceTree = "<group>"; };
 		9A64242D1F33FD460004E74E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9A6424311F3402920004E74E /* Image_launch_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Image_launch_logo@2x.png"; sourceTree = "<group>"; };
 		9A6424321F3402920004E74E /* searchBtnIconHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchBtnIconHL@2x.png"; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 				9A6241441F39A94000B9DD60 /* CollectionCycleCell.xib */,
 				9A6241471F39BB2600B9DD60 /* RecommendGameView.swift */,
 				9A6241491F39BB3900B9DD60 /* RecommendGameView.xib */,
+				9A62414B1F39C4A300B9DD60 /* CollectionGameCell.swift */,
+				9A62414C1F39C4A300B9DD60 /* CollectionGameCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -614,6 +620,7 @@
 				9A7E0FA51F37F186001756B2 /* CollectionHeaderView.xib in Resources */,
 				9A996F931F31D734001A47E5 /* Profile.storyboard in Resources */,
 				9A6424371F3402920004E74E /* searchIcon@2x.png in Resources */,
+				9A62414E1F39C4A300B9DD60 /* CollectionGameCell.xib in Resources */,
 				9A7E0FAD1F37FF50001756B2 /* CollectionPrettyCell.xib in Resources */,
 				9A64243A1F3406680004E74E /* image_my_history@2x.png in Resources */,
 				9A996F901F31D719001A47E5 /* Follow.storyboard in Resources */,
@@ -800,6 +807,7 @@
 				9A7E0FF41F385271001756B2 /* NSDate-Extension.swift in Sources */,
 				9A62413C1F39664C00B9DD60 /* CollectionBaseCell.swift in Sources */,
 				9A7E0FA81F37F766001756B2 /* CollectionNormalCell.swift in Sources */,
+				9A62414D1F39C4A300B9DD60 /* CollectionGameCell.swift in Sources */,
 				9A7E0FEF1F384A1E001756B2 /* NetworkTools.swift in Sources */,
 				9A64242E1F33FD460004E74E /* HomeViewController.swift in Sources */,
 				9A7E0FF21F384E9E001756B2 /* RecommendViewModel.swift in Sources */,

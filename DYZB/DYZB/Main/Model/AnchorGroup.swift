@@ -34,6 +34,14 @@ class AnchorGroup: NSObject {
     //组显示的图标
     var icon_name : String = "home_header_normal"
     
+    //游戏对应的图标
+    var icon_url : String = ""
+    
+    
+    
+    
+    
+    
     init(dict : [String : NSObject]) {
         
         super.init()
