@@ -8,11 +8,52 @@
 
 import UIKit
 
-class CollectionNormalCell: UICollectionViewCell {
+class CollectionNormalCell: CollectionBaseCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK: - 定义模型属性
+//    var anchr : AnchorModel?
+    
+
+    
+    @IBOutlet var roomNameLabel: UILabel!
+    
+    //父亲方法充血，就要写override
+    
+    override var anchor : AnchorModel?{
+        didSet{
+            
+            super.anchor = anchor
+            
+            //4.设置房间名称
+            roomNameLabel.text = anchor?.room_name
+            
+        }
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
